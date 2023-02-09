@@ -7,7 +7,7 @@ const numberTwo = "2.30";
 // add those two numbers and show the result
 // you cannot touch line 1 neither line 2
 const resultOne = Number(numberOne) + Number(numberTwo);
-// console.log(resultOne);
+console.log(resultOne);
 
 // --------------------------------------
 
@@ -20,8 +20,7 @@ const anotherNumberTwo = "2.30";
 
 const resultTwo = Number(anotherNumberOne) + Number(anotherNumberTwo);
 const resultWithTwoDecimals = resultTwo.toFixed(2);
-// console.log(resultWithTwoDecimals);
-
+console.log(resultWithTwoDecimals);
 
 // --------------------------------------
 // Exercise 5 - Decimals and average
@@ -33,7 +32,7 @@ const three = 98;
 // Show in the console the avg. with 5 decimals
 
 const average = (one + two + three) / 3;
-// console.log(average);
+console.log(average);
 
 
 
