@@ -36,15 +36,17 @@ app.get("/", (req, res) => {
     `);
 });
 
-app.get("/bird", (req, res) => {
+app.get("/birds", (req, res) => {
     res.send(mockBirds);
 });
 
-app.get("/bird/:id", (req, res) => {
+app.get("/birds/:id", (req, res) => {
     res.send(
         mockBirds.find(bird => 
             bird.id == req.params.id
         ));
 });
 
-app.listen(8080);
+app.listen(8080, () => {
+    console.log("Server is running on port", 8080);
+});
