@@ -37,10 +37,7 @@ app.get("/birds", (req, res) => {
 });
 
 app.get("/birds/:id", (req, res) => {
-    res.send(
-        mockBirds.find(bird => 
-            bird.id === Number(req.params.id)
-        ));
+    res.send({data: mockBirds.find(bird => bird.id === Number(req.params.id))});
 });
 
 app.post("/birds", (req, res) =>  {
@@ -77,7 +74,7 @@ app.post("/birds", (req, res) =>  {
         }
     }
     mockBirds.push(newBird);
-    res.send({ message: newBird });
+    res.send({ data: newBird });
 
 });
 
@@ -104,7 +101,7 @@ app.put("/birds/:id", (req, res) => {
     }
 
     Object.assign(modifiedBird, req.body);
-    res.send({ message: modifiedBird });
+    res.send({ data: modifiedBird });
 });
 
 app.delete("/birds/:id", (req, res) => {
