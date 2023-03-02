@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+        :root {
+            font-size: 62.5%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            align-content: center;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #title {
+            font-family: "Montserrat", Arial;
+            font-size: 3vw;
+        }
+
+        #time {
+            font-family: "Montserrat", Arial;
+            font-size: 4vw;
+        }
+
+        #awakening {
+            margin-top: 5vh;
+        }
+
+        .regular-text {
+            font-family: "Montserrat", Arial;
+            font-size: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">Current Time:</h1>
+        <p id="time"></p>
+        <div id="awakening">
+            <p class="regular-text">This website most certainly lacks functionality, however, time is an <em>illusion</em>, just like birds!</p>
+            <p class="regular-text">(They're actually drones used by the government to spy on us)</p>
+            <p class="regular-text">Don't believe me? Check <a href="https://bit.ly/3BlS71b" target="_blank">this</a> out!</p>
+        </div>
+    </div>
+</body>
+<script>
+    function formatTime(number) {
+        return (number < 10) ? "0" + number : number;
+    }
+    function tick() {
+        const today = new Date();
+        const time = 
+            formatTime(today.getHours()) + ":" 
+            + formatTime(today.getMinutes()) + ":" 
+            + formatTime(today.getSeconds());
+        document.getElementById("time").textContent = time;
+    }
+    setInterval(tick, 500);
+</script>
+</html>
